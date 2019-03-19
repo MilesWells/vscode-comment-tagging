@@ -1,27 +1,25 @@
 // The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+import { ExtensionContext, window, debug } from "vscode";
+import * as vsc from "vscode";
+import TreeTagProvider from "./TreeTagProvider";
+
+const TREE_VIEW_ID = "ct-tree-view";
+const VIEW_CONTAINER_ID = "ct-view-container";
+const VIEW_ID = "ct-view";
+const treeDataProvider = new TreeTagProvider();
+
+// @todo: use capture groups. 1 is the tag name, 2 is the tag description
+const regex = /\/\/ @(\S+) (.*$)/;
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
-
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-		console.log('Congratulations, your extension "comment-tagger" is now active!');
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('extension.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World!');
-	});
-
-	context.subscriptions.push(disposable);
+export function activate(context: ExtensionContext) {
+  // NOTE: Activation is when the extension does something.
+  // SEE SOURCE FOR HELP: https://github.com/wayou/vscode-todo-highlight
+  const disposable = window.registerTreeDataProvider(VIEW_ID, treeDataProvider);
 }
 
 // this method is called when your extension is deactivated
-export function deactivate() {}
+export function deactivate() {
+  console.log("deactivated");
+}

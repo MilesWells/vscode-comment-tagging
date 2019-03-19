@@ -1,15 +1,27 @@
 {
-	"rules": {
-		"no-string-throw": true,
-		"no-unused-expression": true,
-		"no-duplicate-variable": true,
-		"curly": true,
-		"class-name": true,
-		"semicolon": [
-			true,
-			"always"
-		],
-		"triple-equals": true
-	},
-	"defaultSeverity": "warning"
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "defaultSeverity": "warning",
+  "rules": {
+    "ordered-imports": false,
+    "no-console": {
+      "severity": "warning",
+      "options": ["log"]
+    },
+    "object-literal-sort-keys": false,
+    "interface-name": [true, "never-prefix"],
+    "member-ordering": false,
+    "jsx-boolean-value": [true, "never"],
+    "jsx-no-lambda": false
+  },
+  "jsRules": {
+    "ordered-imports": false,
+    "no-console": {
+      "severity": "warning",
+      "options": ["log"]
+    },
+    "object-literal-sort-keys": false,
+    "member-ordering": false,
+    "jsx-boolean-value": [true, "never"],
+    "jsx-no-lambda": false
+  }
 }
