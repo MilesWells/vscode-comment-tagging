@@ -17,7 +17,7 @@
     "commands": [
       {
         "command": "ct-tree.onClickTag",
-        "title": ""
+        "title": "onClickTag"
       }
     ],
     "viewsContainers": {
@@ -33,7 +33,7 @@
       "ct-view-container": [
         {
           "id": "ct-view",
-          "name": "Comment Tags"
+          "name": "My Tags"
         }
       ]
     }

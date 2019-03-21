@@ -172,7 +172,7 @@ export default class TreeTagProvider implements vscode.TreeDataProvider<Node> {
             type: NodeType.TAG,
             label: `${idx + 1}: ${description}`,
             command: {
-              title: '',
+              title: 'onClickTag',
               command: 'ct-tree.onClickTag',
               arguments: [path, idx]
             }
