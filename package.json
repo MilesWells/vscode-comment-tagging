@@ -3,6 +3,10 @@
   "displayName": "Comment Tagger",
   "publisher": "mileswells93",
   "description": "Keep track of notes in comments",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MilesWells/vscode-comment-tagging"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.32.0"
