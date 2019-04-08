@@ -1,6 +1,7 @@
 {
   "name": "comment-tagger",
   "displayName": "Comment Tagger",
+  "publisher": "mileswells93",
   "description": "Keep track of notes in comments",
   "version": "0.0.1",
   "engines": {

@@ -64,7 +64,7 @@ const readFile = promisify(fs.readFile);
 // unicode consortium considers this as the proper cross-platform regex for finding new lines
 const NEW_LINE_REGEX = /\r\n|[\n\v\f\r\x85\u2028\u2029]/;
 
-// @TODO make this configurable
+// TODO make this configurable
 const TAG_REGEX = /\/\/[ ]?@(\S+) (.*$)/;
 
 export default class TreeTagProvider implements vscode.TreeDataProvider<Node> {
@@ -88,7 +88,7 @@ export default class TreeTagProvider implements vscode.TreeDataProvider<Node> {
   }
 
   public refresh = async () => {
-    // @TODO config for excluded globs
+    // TODO config for excluded globs
     const files = await vscode.workspace.findFiles(
       '**/*',
       '**/node_modules/**'

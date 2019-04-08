@@ -19,7 +19,7 @@ export function activate(context: vscode.ExtensionContext) {
   // when we click a tag, show the document and put the cursor on the correct line
   vscode.commands.registerCommand(
     'ct-tree.onClickTag',
-    async (path, lineNumber) => {
+    async (path: string, lineNumber: number) => {
       await vscode.window.showTextDocument(vscode.Uri.parse(`file://${path}`));
       if (!vscode.window.activeTextEditor) {
         return;
